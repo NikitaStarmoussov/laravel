@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+Route::post('/submit-form', function (Illuminate\Http\Request $request) {
+    $name = $request->input('name');
+    $email = $request->input('email');
+
+    return view('form_response', ['name' => $name, 'email' => $email]);
+});
