@@ -29,26 +29,26 @@ class CreateSubscribersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('username');
-            $table->string('password');
-            $table->timestamps();
-        });
+        // Schema::create('users', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('username');
+        //     $table->string('password');
+        //     $table->timestamps();
+        // });
 
-        Schema::create('directories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->timestamps();
-        });
+        // Schema::create('directories', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('name');
+        //     $table->string('description');
+        //     $table->timestamps();
+        // });
 
-        Schema::create('subscriber_cards', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('subscriber_id');
-            $table->foreign('subscriber_id')->references('id')->on('subscribers');
-            $table->timestamps();
-        });
+        // Schema::create('subscriber_cards', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->unsignedBigInteger('subscriber_id');
+        //     $table->foreign('subscriber_id')->references('id')->on('subscribers');
+        //     $table->timestamps();
+        // });
     }
 
     /**

@@ -17,13 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/form', function () {
-    return view('form');
-});
 
-Route::post('/submit-form', function (Illuminate\Http\Request $request) {
-    $name = $request->input('name');
-    $email = $request->input('email');
-
-    return view('form_response', ['name' => $name, 'email' => $email]);
-});
+// Route::get('subscribers', [SubscriberController::class, 'index']);
+// Route::get('subscribers/create', [SubscriberController::class, 'create']);
+// Route::post('subscribers', [SubscriberController::class, 'store']);
+// Route::get('subscribers/{id}', [SubscriberController::class, 'show']);
+// Route::get('subscribers/{id}/edit', [SubscriberController::class, 'edit']);
+// Route::put('subscribers/{id}', [SubscriberController::class, 'update']);
+// Route::delete('subscribers/{id}', [SubscriberController::class, 'destroy']);
