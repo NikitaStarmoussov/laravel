@@ -14,7 +14,7 @@ class SubscribersSeeder extends Seeder
     public function run(): void
     {
         Subscribers::factory()
-        ->count(10)
+        ->count(100)
         ->create();
     }
 }
