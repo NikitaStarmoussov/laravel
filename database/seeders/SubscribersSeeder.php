@@ -2,17 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Subscribers;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Subscribers;
 
 class SubscribersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         Subscribers::factory()
         ->count(10)

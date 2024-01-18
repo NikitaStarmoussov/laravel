@@ -10,8 +10,6 @@ class SubscribersController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -20,8 +18,6 @@ class SubscribersController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -30,9 +26,6 @@ class SubscribersController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreSubscribersRequest  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(StoreSubscribersRequest $request)
     {
@@ -41,9 +34,6 @@ class SubscribersController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Subscribers  $subscribers
-     * @return \Illuminate\Http\Response
      */
     public function show(Subscribers $subscribers)
     {
@@ -52,9 +42,6 @@ class SubscribersController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Subscribers  $subscribers
-     * @return \Illuminate\Http\Response
      */
     public function edit(Subscribers $subscribers)
     {
@@ -63,10 +50,6 @@ class SubscribersController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateSubscribersRequest  $request
-     * @param  \App\Models\Subscribers  $subscribers
-     * @return \Illuminate\Http\Response
      */
     public function update(UpdateSubscribersRequest $request, Subscribers $subscribers)
     {
@@ -75,9 +58,6 @@ class SubscribersController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Subscribers  $subscribers
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Subscribers $subscribers)
     {
