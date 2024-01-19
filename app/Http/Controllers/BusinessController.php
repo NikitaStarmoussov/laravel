@@ -21,7 +21,7 @@ class BusinessController extends Controller
     {
         $filter = new BusinessQuery();
         $queryItems = $filter->transform($request);
-        if(count($queryItems)==0 ||$queryItems['column'] == null || $queryItems['order'] == null || $queryItems['q'] == null){
+        if(count($queryItems)==0 ||$queryItems['column'] == null ){
 
             return new BusinessCollection(Business::query()
             ->join('params', 'businesses.id', '=', 'params.id')

@@ -24,7 +24,7 @@ class BusinessQuery
 
 
     public function transform(Request $request){
-        $transformed = ['column'=>null,'order'=>null,'q'=>null];
+        $transformed = ['column'=>null,'order'=>"asc",'q'=>null];
 
         $query = $request->query();
 
@@ -34,7 +34,7 @@ class BusinessQuery
 
             } else {
                 $column =$this->businessColumnMap[$key] ?? null;
-                $order= $this->orderMap[$value] ?? null;
+                $order= $this->orderMap[$value] ?? "asc";
                 $transformed['column'] = $column;
                 $transformed['order'] = $order;
             }
