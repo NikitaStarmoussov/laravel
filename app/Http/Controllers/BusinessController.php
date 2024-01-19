@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBusinessRequest;
 use App\Http\Requests\UpdateBusinessRequest;
 use App\Models\Business;
+use Illuminate\Http\Request;
 
 class BusinessController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return Business::with('params')->get();
+
     }
 
     /**
@@ -35,9 +37,10 @@ class BusinessController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Business $business)
+    public function show(Business $business, $id)
     {
-        //
+        // return $business->with('params')->get();
+        return Business::find($id)->with('params')->get();
     }
 
     /**
