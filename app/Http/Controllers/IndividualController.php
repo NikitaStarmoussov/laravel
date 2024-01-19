@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreIndividualRequest;
 use App\Http\Requests\UpdateIndividualRequest;
+use App\Http\Resources\IndividualCollection;
+use App\Http\Resources\IndividualResource;
 use App\Http\Resources\SubscribersResource;
 use App\Models\Individual;
 use App\Models\Param;
+// use App\Http\Resources\IndividualResource;
 
 class IndividualController extends Controller
 {
@@ -15,8 +18,7 @@ class IndividualController extends Controller
      */
     public function index()
     {
-        $individuals = Individual::with('params')->get();
-        return $individuals;
+        return new IndividualCollection(Individual::with('params')->paginate());
     }
 
     /**
@@ -40,8 +42,7 @@ class IndividualController extends Controller
      */
     public function show(Individual $individual)
     {
-
-        return Individual::with('params')->find($individual->id);
+        return new IndividualResource(Individual::with('params')->find($individual->id));
     }
 
     /**

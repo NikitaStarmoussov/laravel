@@ -4,7 +4,7 @@ use App\Http\Controllers\BusinessController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Subscribers;
-use App\Http\Controllers\SubscribersController;
+
 use App\Http\Controllers\IndividualController;
 use App\Models\Individual;
 
@@ -31,7 +31,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::group(['namespace'=> 'App\Http\Controllers'], function () {
     // Route::get('/i', [IndividualController::class, 'index']);
     // Route::get('/subscribers/{subscribers}', [SubscribersController::class, 'show']);?
-    Route::apiResource('subscribers', SubscribersController::class);
     Route::apiResource('individual', IndividualController::class);
     Route::apiResource('business', BusinessController::class);
 // });

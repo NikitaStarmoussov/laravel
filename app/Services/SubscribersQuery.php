@@ -6,20 +6,20 @@ use illuminate\Http\Request;
 
 class SubscribersQuery
 {
-    protected $allowParams = [
-            'phoneNumber' => ['eq'],
-            'registrationType'=> ['eq'],
-            'lastName'=> ['eq'],
-            'firstName'=> ['eq'],
-            'middleName'=> ['eq'],
-            'organizationName'=> ['eq'],
-            'departmentName'=> ['eq'],
-            'country'=> ['eq'],
-            'city'=> ['eq'],
-            'street'=> ['eq'],
-            'houseNumber'=> ['eq', 'lt', 'gt'],
-            'apartmentNumber'=> ['eq', 'lt', 'gt'],
-    ];
+    // protected $allowParams = [
+    //         'phoneNumber' => ['eq'],
+    //         'registrationType'=> ['eq'],
+    //         'lastName'=> ['eq'],
+    //         'firstName'=> ['eq'],
+    //         'middleName'=> ['eq'],
+    //         'organizationName'=> ['eq'],
+    //         'departmentName'=> ['eq'],
+    //         'country'=> ['eq'],
+    //         'city'=> ['eq'],
+    //         'street'=> ['eq'],
+    //         'houseNumber'=> ['eq', 'lt', 'gt'],
+    //         'apartmentNumber'=> ['eq', 'lt', 'gt'],
+    // ];
     protected $columnMap = [
         'phoneNumber' => 'phone_number',
         'registrationType' => 'registration_type',
@@ -35,13 +35,13 @@ class SubscribersQuery
         'apartmentNumber' => 'apartment_number',
 
     ];
-    protected $operatorMap = [
-        'eq' => '=',
-        'lt' => '<',
-        'lte' => '<=',
-        'gt' => '>',
-        'gte' => '>='
-    ];
+    // protected $operatorMap = [
+    //     'eq' => '=',
+    //     'lt' => '<',
+    //     'lte' => '<=',
+    //     'gt' => '>',
+    //     'gte' => '>='
+    // ];
     function transform (Request $request){
         $transformed = [];
         foreach ($this->allowParams as $param=>$operators){
