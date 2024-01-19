@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\SubscribersSeeder;
+use Database\Seeders\IndividualSeeder;
+use Database\Seeders\BusinessSeeder;
+use Database\Seeders\ParamsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,6 +24,9 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             SubscribersSeeder::class,
+            BusinessSeeder::class,
+            IndividualSeeder::class,
+            ParamSeeder::class,
         ]);
 
     }

@@ -4,17 +4,19 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Subscribers;
+use App\Models\Business;
+// use App\Models\Param;
 
-class SubscribersSeeder extends Seeder
+class BusinessSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Subscribers::factory()
+        Business::factory()
         ->count(1)
+        // ->for(Param::factory())
         ->create();
     }
 }

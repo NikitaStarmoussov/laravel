@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Subscribers;
+use App\Http\Controllers\SubscribersController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,8 +20,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/subscribers', function (Request $request) {
-    return Subscribers::all();
-});
+// Route::get('/subscribers', function (Request $request) {
+//     return Subscribers::all();
+// });
 
+// Route::group(['namespace'=> 'App\Http\Controllers'], function () {
+    // Route::get('/subscribers', [SubscribersController::class, 'index']);
+    // Route::get('/subscribers/{subscribers}', [SubscribersController::class, 'show']);?
+    Route::apiResource('subscribers', SubscribersController::class);
+// });
 
