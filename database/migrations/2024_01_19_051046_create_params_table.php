@@ -11,20 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscribers', function (Blueprint $table) {
+        Schema::create('params', function (Blueprint $table) {
             $table->id();
             $table->string('phone_number');
-            $table->string('registration_type');
-            $table->string('last_name')->nullable();
-            $table->string('first_name')->nullable();
-            $table->string('middle_name')->nullable();
-            $table->string('organization_name')->nullable();
-            $table->string('department_name')->nullable();
             $table->string('country');
             $table->string('city');
             $table->string('street');
-            $table->string('house_number')->nullable();
-            $table->string('apartment_number')->nullable();
+            $table->string('house_number');
+            $table->string('apartment_number');
+            //
+            $table->unsignedBigInteger('individual_id')->nullable();
+            $table->unsignedBigInteger('business_id')->nullable();
+            $table->foreign('individual_id')->references('id')->on('individuals');
+            $table->foreign('business_id')->references('id')->on('businesses');
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subscribers');
+        Schema::dropIfExists('params');
     }
 };

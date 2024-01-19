@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSubscribersRequest;
-use App\Http\Requests\UpdateSubscribersRequest;
-use App\Models\Subscribers;
+use App\Http\Requests\StoreParamRequest;
+use App\Http\Requests\UpdateParamRequest;
+use App\Models\Param;
 
-class SubscribersController extends Controller
+class ParamController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Subscribers::all();
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class SubscribersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSubscribersRequest $request)
+    public function store(StoreParamRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class SubscribersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Subscribers $subscribers)
+    public function show(Param $param)
     {
         //
     }
@@ -43,7 +43,7 @@ class SubscribersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Subscribers $subscribers)
+    public function edit(Param $param)
     {
         //
     }
@@ -51,7 +51,7 @@ class SubscribersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubscribersRequest $request, Subscribers $subscribers)
+    public function update(UpdateParamRequest $request, Param $param)
     {
         //
     }
@@ -59,7 +59,7 @@ class SubscribersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subscribers $subscribers)
+    public function destroy(Param $param)
     {
         //
     }
