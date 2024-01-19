@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             SubscribersSeeder::class,
             BusinessSeeder::class,
             IndividualSeeder::class,
-            ParamSeeder::class,
+            // ParamSeeder::class,
         ]);
 
     }

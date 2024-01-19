@@ -15,7 +15,7 @@ class IndividualSeeder extends Seeder
     public function run(): void
     {
         Individual::factory()
-        ->count(1)
+        ->count(20)
         // ->for(Param::factory())
         ->create();
     }

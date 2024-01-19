@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Business;
+use App\Models\Param;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,5 +22,11 @@ class BusinessFactory extends Factory
             'organization_name' => $this->faker->company,
             'department_name' => $this->faker->company,
         ];
+    }
+    public function configure()
+    {
+        return $this->afterCreating(function (Business $business) {
+            $business->params()->save(Param::factory()->make());
+        });
     }
 }
